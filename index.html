@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Build status — AIM Prestige Motors</title>
+<meta name="description" content="Live build status for the AIM Prestige Motors website and platform.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@110,400;110,500;110,600;110,700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   AIM PRESTIGE MOTORS — brand tokens
+   Mirrors app/tokens.css. Kept as a standalone copy because this
+   page deploys on its own to GitHub Pages with no build step.
+   If app/tokens.css changes, change these to match.
+   ============================================================ */
+:root{
+  --ink-900:#0b0b0d;   /* page background — never #000 */
+  --ink-800:#101117;   /* alternating bands */
+  --ink-700:#16171e;   /* cards, elevated surfaces */
+  --line:rgba(255,255,255,.07);
+
+  --brass:#c6a15b;     /* the single accent */
+  --brass-hi:#e4cb98;
+  --brass-lo:#8a6c30;
+  --brass-a10:rgba(198,161,91,.10);
+  --brass-a18:rgba(198,161,91,.18);
+  --brass-a32:rgba(198,161,91,.32);
+
+  --text:#f2efe9;      /* warm white — never #FFF */
+  --muted:#92929b;
+  --sold:#8c3a2b;      /* the one state colour */
+
+  --done:#8a8f7e;      /* completed items step back, they do not celebrate */
+
+  --sans:'Archivo',"Arial Narrow",system-ui,sans-serif;
+  --body:'Satoshi','Inter Tight',system-ui,-apple-system,sans-serif;
+
+  --radius-card:4px;
+  --radius-button:2px;
+
+  --pad:clamp(16px,4vw,40px);
+  --max:1060px;
+
+  --glow-hero:radial-gradient(ellipse at 50% 0%,var(--brass-a10),transparent 60%);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ink-900);color:var(--text);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  padding:0 var(--pad) 88px;
+}
+/* the one glow, behind the masthead — nowhere else */
+body::before{
+  content:"";position:fixed;inset:0 0 auto 0;height:420px;
+  background:var(--glow-hero);pointer-events:none;z-index:0;
+}
+.wrap{position:relative;z-index:1}
+.wrap{max-width:var(--max);margin:0 auto}
+
+h1,h2,h3,th,.chip,button,.n,.pct,.wlabel,.count,.no,.eyebrow{
+  font-family:var(--sans);font-stretch:110%;font-variation-settings:"wdth" 110;
+}
+h2{font-size:1.05rem;font-weight:600;letter-spacing:-.01em;margin:0 0 4px;color:var(--text)}
+a{color:var(--brass)}
+.tabular{font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--brass-hi);outline-offset:2px;border-radius:var(--radius-button)}
+::selection{background:var(--brass-a32);color:var(--text)}
+
+/* ---------------------------------------------------------- masthead */
+header{padding:48px 0 28px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.brand h1{
+  font-size:clamp(1.6rem,5vw,2.3rem);font-weight:700;
+  letter-spacing:-.02em;margin:0;line-height:1.05;text-wrap:balance;
+}
+.brand .role{font-family:var(--body);font-size:.95rem;color:var(--muted);font-weight:400}
+.meta{
+  margin-top:18px;display:flex;gap:32px;flex-wrap:wrap;
+  font-family:var(--body);font-size:.78rem;color:var(--muted);
+}
+.meta b{
+  font-family:var(--sans);font-stretch:110%;font-variation-settings:"wdth" 110;
+  font-weight:600;color:var(--text);display:block;font-size:1rem;
+  font-variant-numeric:tabular-nums;letter-spacing:-.01em;margin-top:2px;
+}
+
+/* ------------------------------------------------------- week track */
+.track-sec{padding:34px 0 6px}
+.track{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:6px;
+  margin:18px 0 12px;
+}
+.wk{
+  background:var(--ink-700);border:1px solid var(--line);
+  border-top:2px solid rgba(255,255,255,.12);
+  border-radius:var(--radius-card);
+  padding:13px 11px 14px;text-align:left;
+  cursor:pointer;font:inherit;color:var(--text);
+  display:flex;flex-direction:column;gap:8px;min-height:108px;
+  transition:border-color var(--d,200ms) ease, background var(--d,200ms) ease;
+}
+.wk:hover{border-color:var(--brass-lo)}
+.wk .n{font-size:1.5rem;font-weight:700;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.wk .nm{font-family:var(--body);font-size:.7rem;color:var(--muted);line-height:1.35}
+.wk .mini{height:2px;background:rgba(255,255,255,.09);margin-top:auto}
+.wk .mini i{display:block;height:100%;background:var(--muted);width:0;transition:width .8s ease}
+.wk[data-s="complete"]{border-top-color:var(--done)}
+.wk[data-s="complete"] .mini i{background:var(--done)}
+.wk[data-s="complete"] .n{color:var(--muted)}
+.wk[data-s="in-progress"],.wk[data-s="in-review"]{
+  border-top-color:var(--brass);background:var(--ink-700);
+  box-shadow:0 18px 50px -20px var(--brass-a18);
+}
+.wk[data-s="in-progress"] .mini i,.wk[data-s="in-review"] .mini i{background:var(--brass)}
+.wk[aria-expanded="true"]{border-color:var(--brass-lo)}
+
+.pins{
+  display:flex;justify-content:space-between;gap:12px;
+  font-family:var(--body);font-size:.75rem;color:var(--muted);
+  border-top:1px solid var(--line);padding-top:10px;
+}
+.pins span b{
+  font-family:var(--sans);font-stretch:110%;font-weight:600;color:var(--text);
+  font-variant-numeric:tabular-nums;
+}
+
+/* ------------------------------------------------------------- bar */
+.overall{margin:26px 0 0;display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.overall .pct{
+  font-size:3.6rem;font-weight:700;line-height:.85;letter-spacing:-.04em;
+  color:var(--brass);font-variant-numeric:tabular-nums;
+}
+.overall .of{font-family:var(--body);font-size:.85rem;color:var(--muted);padding-bottom:6px}
+.bar{height:4px;background:rgba(255,255,255,.08);width:100%;margin-top:16px}
+.bar i{display:block;height:100%;background:var(--brass);width:0;transition:width 1s ease .2s}
+
+/* -------------------------------------------------------- sections */
+section{padding:38px 0 0}
+.lede{color:var(--muted);max-width:62ch;margin:0 0 20px;font-size:.94rem}
+
+.blockers{border-left:2px solid var(--sold);padding:2px 0 2px 18px;list-style:none;margin:0}
+.blockers li{margin-bottom:14px}
+.blockers .due{
+  font-family:var(--sans);font-stretch:110%;font-size:.6875rem;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--sold);
+}
+
+/* ----------------------------------------------------------- weeks */
+.panel{background:var(--ink-800);border:1px solid var(--line);border-radius:var(--radius-card);margin-bottom:8px}
+.panel > .head{
+  width:100%;display:flex;align-items:center;gap:14px;
+  padding:16px 18px;background:none;border:0;cursor:pointer;
+  font:inherit;color:inherit;text-align:left;
+}
+.panel > .head{color:var(--text)}
+.panel .wlabel{font-weight:700;font-size:.95rem;min-width:80px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.panel .wtitle{flex:1;font-family:var(--body);font-weight:400;font-size:.95rem;color:var(--text)}
+.panel .count{font-size:.82rem;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.chip{
+  font-size:.6875rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  padding:3px 9px;border:1px solid currentColor;border-radius:var(--radius-button);
+  color:var(--muted);white-space:nowrap;
+}
+.chip[data-s="complete"]{color:var(--done)}
+.chip[data-s="in-progress"],.chip[data-s="in-review"]{color:var(--brass)}
+.body{display:none;padding:0 18px 20px;border-top:1px solid var(--line)}
+.body.open{display:block}
+.body .desc{color:var(--muted);margin:14px 0 14px;max-width:62ch;font-size:.92rem}
+ul.items{list-style:none;margin:0;padding:0;column-gap:34px}
+@media(min-width:800px){ul.items{columns:2}}
+ul.items li{
+  break-inside:avoid;display:flex;gap:10px;align-items:flex-start;
+  padding:4px 0;font-size:.93rem;line-height:1.5;
+}
+ul.items li .mark{
+  flex:0 0 auto;width:14px;height:14px;margin-top:6px;
+  border:1px solid rgba(255,255,255,.18);border-radius:var(--radius-button);
+}
+ul.items li.done .mark{background:var(--brass);border-color:var(--brass);position:relative}
+ul.items li.done .mark::after{
+  content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;
+  border:solid var(--ink-900);border-width:0 1.6px 1.6px 0;transform:rotate(43deg);
+}
+ul.items li{color:var(--text)}
+ul.items li.done{color:var(--muted)}
+
+/* ------------------------------------------------------- criteria */
+.crit{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:2px 22px}
+.crit li{display:flex;gap:10px;padding:7px 0;font-size:.9rem;border-bottom:1px solid var(--line)}
+.crit .no{font-weight:600;color:var(--muted);min-width:22px;font-size:.8rem;padding-top:2px;font-variant-numeric:tabular-nums}
+.crit li.done .no{color:var(--brass)}
+.crit li.done{color:var(--muted)}
+
+footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted);max-width:70ch}
+.err{background:var(--ink-700);border:1px solid var(--sold);border-radius:var(--radius-card);padding:20px;margin-top:30px}
+.err code{color:var(--brass-hi)}
+
+@media(max-width:720px){
+  .track{grid-template-columns:repeat(3,1fr)}
+  .overall .pct{font-size:2.8rem}
+  .panel > .head{flex-wrap:wrap;gap:6px 12px;padding:14px}
+  .panel .wlabel{min-width:0}
+  .panel .wtitle{flex:1 1 100%;order:3;font-size:.9rem}
+  .panel .count{margin-left:auto}
+  ul.items li{font-size:.9rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .bar i,.wk .mini i{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand">
+      <h1>AIM Prestige Motors</h1>
+      <span class="role">Website and platform build</span>
+    </div>
+    <div class="meta">
+      <span>Currently on<b id="m-week">—</b></span>
+      <span>Last updated<b id="m-updated">—</b></span>
+      <span>Brisbane time now<b id="m-clock">—</b></span>
+    </div>
+  </header>
+
+  <div id="app" hidden>
+
+    <section class="track-sec" aria-labelledby="h-track">
+      <h2 id="h-track">Delivery schedule</h2>
+      <p class="lede">Each week produces a defined outcome that AIM reviews and confirms before the next week begins. Weeks 7 and 8 are contingency, not planned work.</p>
+      <div class="track" id="track"></div>
+      <div class="pins">
+        <span>Target completion <b id="m-target">—</b></span>
+        <span>Outside completion <b id="m-outside">—</b></span>
+      </div>
+
+      <div class="overall">
+        <div>
+          <div style="display:flex;align-items:flex-end;gap:10px">
+            <span class="pct" id="m-pct">0%</span>
+            <span class="of" id="m-of">—</span>
+          </div>
+          <div class="bar"><i id="m-bar"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="s-blockers" hidden aria-labelledby="h-block">
+      <h2 id="h-block">Waiting on AIM</h2>
+      <p class="lede">These two items are named in the agreement as the hardest blockers. Both take time outside our control, so the earlier they arrive the better.</p>
+      <ul class="blockers" id="blockers"></ul>
+    </section>
+
+    <section aria-labelledby="h-weeks">
+      <h2 id="h-weeks">What is done, week by week</h2>
+      <p class="lede">Open any week to see the detail. Ticked items are built and tested.</p>
+      <div id="weeks"></div>
+    </section>
+
+    <section aria-labelledby="h-crit">
+      <h2 id="h-crit">Acceptance criteria</h2>
+      <p class="lede">The twenty-two outcomes in Section 5 of the agreement. The platform is accepted when every one of these is demonstrated working.</p>
+      <ul class="crit" id="crit"></ul>
+    </section>
+
+  </div>
+
+  <div class="err" id="err" hidden>
+    <strong>Status data could not be loaded.</strong>
+    <p style="margin:8px 0 0">If you are opening this file directly from your computer, run a local server instead: <code>npx serve status-site</code>. On the deployed site this message means <code>progress.json</code> is missing.</p>
+  </div>
+
+  <footer>
+    <p>Built and maintained by Adnan Al Sayeed Sihab under the Website and Platform Development Agreement dated 6 September 2026. This page is generated from the project’s own progress file and updates whenever work is pushed.</p>
+  </footer>
+
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+
+/* live Brisbane clock — AIM's local time, not ours */
+function clock(){
+  $('m-clock').textContent = new Intl.DateTimeFormat('en-AU',{
+    timeZone:'Australia/Brisbane', hour:'2-digit', minute:'2-digit', hour12:false
+  }).format(new Date());
+}
+clock(); setInterval(clock, 30000);
+
+const niceDate = (s) => {
+  if(!s) return '—';
+  const d = new Date(s);
+  return isNaN(d) ? s : new Intl.DateTimeFormat('en-AU',{day:'numeric',month:'short',year:'numeric'}).format(d);
+};
+const STATUS_TEXT = {
+  'complete':'Complete', 'in-progress':'In progress',
+  'in-review':'With AIM for review', 'not-started':'Not started', 'blocked':'Blocked'
+};
+
+fetch('progress.json', {cache:'no-store'})
+  .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
+  .then(render)
+  .catch(() => { $('err').hidden = false; });
+
+function render(d){
+  $('app').hidden = false;
+
+  $('m-week').textContent    = d.currentWeek || '—';
+  $('m-updated').textContent = niceDate(d.lastUpdated);
+  $('m-target').textContent  = niceDate(d.targetCompletion);
+  $('m-outside').textContent = niceDate(d.outsideCompletion);
+  $('m-pct').textContent     = d.overall.pct + '%';
+  $('m-of').textContent      = d.overall.done + ' of ' + d.overall.total + ' items complete';
+  requestAnimationFrame(() => { $('m-bar').style.width = d.overall.pct + '%'; });
+
+  /* ---- week track (hero) ---- */
+  const track = $('track');
+  d.weeks.forEach((w, i) => {
+    const pct = w.total ? Math.round(w.done / w.total * 100) : 0;
+    const b = document.createElement('button');
+    b.className = 'wk';
+    b.dataset.s = w.status;
+    b.setAttribute('aria-expanded','false');
+    b.setAttribute('aria-controls','body-' + i);
+    b.innerHTML =
+      '<span class="n">' + w.label.replace(/^Week\s*/,'') + '</span>' +
+      '<span class="nm">' + w.title + '</span>' +
+      '<span class="mini"><i></i></span>';
+    b.addEventListener('click', () => openWeek(i, true));
+    track.appendChild(b);
+    requestAnimationFrame(() => { b.querySelector('.mini i').style.width = pct + '%'; });
+  });
+
+  /* ---- blockers ---- */
+  if(d.blockers && d.blockers.length){
+    $('s-blockers').hidden = false;
+    $('blockers').innerHTML = d.blockers.map(b =>
+      '<li><span class="due">Needed by ' + b.due + '</span><br>' + b.item + '</li>'
+    ).join('');
+  }
+
+  /* ---- week panels ---- */
+  $('weeks').innerHTML = d.weeks.map((w, i) => {
+    const items = w.items.map(it =>
+      '<li class="' + (it.done ? 'done' : '') + '"><span class="mark"></span><span>' + esc(it.text) + '</span></li>'
+    ).join('');
+    return '' +
+      '<div class="panel">' +
+        '<button class="head" aria-expanded="false" aria-controls="body-' + i + '" data-i="' + i + '">' +
+          '<span class="wlabel">' + w.label + '</span>' +
+          '<span class="wtitle">' + esc(w.title) + '</span>' +
+          '<span class="count">' + w.done + '/' + w.total + '</span>' +
+          '<span class="chip" data-s="' + w.status + '">' + (STATUS_TEXT[w.status] || w.status) + '</span>' +
+        '</button>' +
+        '<div class="body" id="body-' + i + '">' +
+          (w.description ? '<p class="desc">' + esc(w.description) + '</p>' : '') +
+          '<ul class="items">' + items + '</ul>' +
+        '</div>' +
+      '</div>';
+  }).join('');
+
+  document.querySelectorAll('.panel .head').forEach(h =>
+    h.addEventListener('click', () => openWeek(+h.dataset.i, false)));
+
+  /* ---- acceptance criteria ---- */
+  $('crit').innerHTML = d.criteria.map(c =>
+    '<li class="' + (c.done ? 'done' : '') + '"><span class="no">' + c.n + '</span><span>' + esc(c.text) + '</span></li>'
+  ).join('');
+
+  /* open whichever week is live */
+  const live = d.weeks.findIndex(w => w.status === 'in-progress' || w.status === 'in-review');
+  if(live >= 0) openWeek(live, false);
+}
+
+function openWeek(i, scroll){
+  const body = $('body-' + i);
+  const head = document.querySelector('.panel .head[data-i="' + i + '"]');
+  const tile = document.querySelectorAll('.wk')[i];
+  const willOpen = !body.classList.contains('open');
+
+  document.querySelectorAll('.body').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.panel .head, .wk').forEach(b => b.setAttribute('aria-expanded','false'));
+
+  if(willOpen){
+    body.classList.add('open');
+    head.setAttribute('aria-expanded','true');
+    tile.setAttribute('aria-expanded','true');
+    if(scroll) head.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+}
+
+function esc(s){
+  return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+}
+</script>
+</body>
+</html>

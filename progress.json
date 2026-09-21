@@ -1,0 +1,859 @@
+{
+  "generatedAt": "2026-09-21T16:20:16.967Z",
+  "lastUpdated": "2026-09-21",
+  "currentWeek": "Week 4",
+  "targetCompletion": "2026-10-19",
+  "outsideCompletion": "2026-11-02",
+  "daysLost": "0",
+  "overall": {
+    "done": 108,
+    "total": 160,
+    "pct": 68
+  },
+  "weeks": [
+    {
+      "label": "Week 0",
+      "title": "Pitch demo",
+      "status": "complete",
+      "description": "Built before the agreement was signed, to win the job. Static typed data, no database, no",
+      "items": [
+        {
+          "done": true,
+          "text": "Design token system in `app/tokens.css` — colour, type, radius, motion"
+        },
+        {
+          "done": true,
+          "text": "Token to Tailwind theme mapping in `app/globals.css`"
+        },
+        {
+          "done": true,
+          "text": "Self-hosted Archivo and Satoshi via `next/font/local`"
+        },
+        {
+          "done": true,
+          "text": "`/styleguide` route — palette, type scale, button, vehicle card"
+        },
+        {
+          "done": true,
+          "text": "Navbar — dark glass, floating, brass Book Consultation CTA"
+        },
+        {
+          "done": true,
+          "text": "Hero with video background, scrim and tagline"
+        },
+        {
+          "done": true,
+          "text": "Hero search bar — Make and Model, routes to inventory with URL params"
+        },
+        {
+          "done": true,
+          "text": "Vehicle card, portrait 4:5, hover reveal with brass bloom"
+        },
+        {
+          "done": true,
+          "text": "Sold card treatment — desaturated, SOLD badge"
+        },
+        {
+          "done": true,
+          "text": "Footer with quick links, contact and dark-filtered Google Map"
+        },
+        {
+          "done": true,
+          "text": "Floating WhatsApp button"
+        },
+        {
+          "done": true,
+          "text": "Scroll reveal component, once-only, reduced-motion safe"
+        },
+        {
+          "done": true,
+          "text": "Homepage in the §6 order — Featured, New Arrivals, Reviews, Previously Sold, How It Works"
+        },
+        {
+          "done": true,
+          "text": "`data/vehicles.ts` with AIM's 3 real vehicles plus 3 marked demo filler"
+        },
+        {
+          "done": true,
+          "text": "`data/reviews.ts` with placeholder reviews, visibly marked"
+        },
+        {
+          "done": true,
+          "text": "Deployed to Vercel and checked on a physical phone"
+        }
+      ],
+      "done": 16,
+      "total": 16
+    },
+    {
+      "label": "Week 1",
+      "title": "Foundation",
+      "status": "complete",
+      "description": "Database schema, roles, permission model, environments. No new interface this week by design",
+      "items": [
+        {
+          "done": true,
+          "text": "11 numbered migrations, run clean end to end on PostgreSQL 16"
+        },
+        {
+          "done": true,
+          "text": "38 tables covering every structure in clause 2.7"
+        },
+        {
+          "done": true,
+          "text": "Master vehicle record with the full clause 2.7 field set (feed-ready)"
+        },
+        {
+          "done": true,
+          "text": "Permission model: permissions / role_permissions / has_permission()"
+        },
+        {
+          "done": true,
+          "text": "Owner, Accounts, Staff active; Manager, Salesperson, Inventory, Marketing ready to activate"
+        },
+        {
+          "done": true,
+          "text": "Row Level Security on every table, verified none missing"
+        },
+        {
+          "done": true,
+          "text": "Audit log and price history as database triggers"
+        },
+        {
+          "done": true,
+          "text": "Derived views: landed cost, vehicle financials, deal balances, delivery margin"
+        },
+        {
+          "done": true,
+          "text": "Storage buckets and access policies (public images, private documents)"
+        },
+        {
+          "done": true,
+          "text": "Reservation locking function and expiry release job"
+        },
+        {
+          "done": true,
+          "text": "Delivery quote resolver with full precedence order"
+        },
+        {
+          "done": true,
+          "text": "Controlled invoice numbering"
+        },
+        {
+          "done": true,
+          "text": "Seed of 300 vehicles and 6,000 images for realistic-volume testing"
+        },
+        {
+          "done": true,
+          "text": "Verification scripts (rls_test.sql, smoke_test.sql)"
+        },
+        {
+          "done": true,
+          "text": "Schema documentation for AIM (PDF and Word)"
+        },
+        {
+          "done": true,
+          "text": "Brand guideline documented in docs/BRAND.md"
+        },
+        {
+          "done": true,
+          "text": "Acceptance test suite: 105 database checks across Weeks 1–2, all passing (`docs/TEST_REPORT.md`)"
+        },
+        {
+          "done": true,
+          "text": "Migration 0013 — slug permanence and private-document policy fixes found by the suite"
+        },
+        {
+          "done": true,
+          "text": "Migration 0014 — explicit grants so the project runs with \"auto-expose new tables\" off"
+        },
+        {
+          "done": true,
+          "text": "Supabase project created under AIM, Sydney region confirmed — ref zkgqtsghwfpkddferqmz, ap-southeast-2, Postgres 17, org \"aimprestige's Org\""
+        },
+        {
+          "done": true,
+          "text": "Vercel project under AIM, region syd1 — https://aimprestige.vercel.app, deployed 2026-09-13, `x-vercel-id` confirms syd1"
+        },
+        {
+          "done": true,
+          "text": "GitHub repo under AIM, both developers added — `aimprestige/aimprestige`"
+        },
+        {
+          "done": true,
+          "text": "Migrations pushed to the live Supabase project — all 14 applied 2026-09-13, verified: 39 tables, 0 without RLS, matrix 25/17/14, both buckets"
+        },
+        {
+          "done": true,
+          "text": "Backup restoration rehearsal completed and documented"
+        },
+        {
+          "done": true,
+          "text": "Week 1 review email sent to AIM"
+        },
+        {
+          "done": true,
+          "text": "AIM written confirmation received — 2026-09-19"
+        }
+      ],
+      "done": 26,
+      "total": 26
+    },
+    {
+      "label": "Week 2",
+      "title": "Administration system",
+      "status": "in-progress",
+      "description": "AIM logs in and adds, edits and publishes a real vehicle without assistance.",
+      "items": [
+        {
+          "done": true,
+          "text": "Secure staff login — `/admin/login`, password via Supabase Auth, session refreshed in `proxy.ts`"
+        },
+        {
+          "done": true,
+          "text": "Multi-factor authentication enforced for admin roles — any aal1 session is sent to `/admin/mfa`; enrol or verify, no skip"
+        },
+        {
+          "done": true,
+          "text": "Role-aware admin layout and navigation — permission set read from `role_permissions`, staff check against `profiles`"
+        },
+        {
+          "done": true,
+          "text": "Add, edit and publish vehicles with no developer involvement — tabbed form: Identity, Specs, Pricing, Photos, Costs, Documents, Status"
+        },
+        {
+          "done": true,
+          "text": "Multi-image upload with drag-to-reorder — signed upload URLs straight to Storage, order written in one call"
+        },
+        {
+          "done": true,
+          "text": "Duplicate Vehicle — `fn_duplicate_vehicle()` copies the listing as a draft with VIN, stock number, odometer, prices cleared; photos copied"
+        },
+        {
+          "done": true,
+          "text": "Full lifecycle: Draft, Coming Soon, Active, Reserved, Sold, Archived — transition table in `lib/vehicles/status.ts`, DB trigger backstop"
+        },
+        {
+          "done": true,
+          "text": "Featured and New Arrival controls governing homepage content — Pricing tab (homepage rewiring to read them is Week 3)"
+        },
+        {
+          "done": true,
+          "text": "Sold archive with recorded sale prices — `/admin/vehicles/sold`; sale price required when marking Sold"
+        },
+        {
+          "done": true,
+          "text": "Vehicle cost entry with landed cost, gross profit, margin, return on cost — from `v_vehicle_financials`"
+        },
+        {
+          "done": true,
+          "text": "Cost and profit visible only to Owner and Accounts — Costs tab absent for Staff; the policy refuses regardless"
+        },
+        {
+          "done": true,
+          "text": "Document attachment against vehicles and customers, privately stored — private bucket, 60-second signed URLs"
+        },
+        {
+          "done": true,
+          "text": "Trade-in records with internal valuation fields — `/admin/trade-ins`, staff-recorded walk-ins plus the Week 6 web form"
+        },
+        {
+          "done": true,
+          "text": "Convert to Stock — `fn_convert_trade_in()`: one transaction creates the vehicle, copies photos, links customer, records acquisition cost where permitted"
+        },
+        {
+          "done": true,
+          "text": "Staff invitations from the Team page (Owner only), password setup and reset flows"
+        },
+        {
+          "done": true,
+          "text": "Unit tests for form schemas, money, lifecycle and storage paths (`npm test`, 21 checks)"
+        },
+        {
+          "done": false,
+          "text": "Acceptance suite run against the live project and test data reviewed by AIM, then removed"
+        },
+        {
+          "done": true,
+          "text": "Deployed to Vercel (syd1) and connected to the live Sydney Supabase project — https://aimprestige.vercel.app (2026-09-13)"
+        },
+        {
+          "done": true,
+          "text": "First Owner account created and MFA enrolled (2026-09-13); admin walk passed locally against the live project for vehicles, photos, costs, documents, lifecycle, duplicate and trade-in conversion. Staff invitation by email still to be tested."
+        },
+        {
+          "done": false,
+          "text": "Week 2 acceptance walk completed by AIM unassisted (criteria 1, 7, 15, 21)"
+        },
+        {
+          "done": true,
+          "text": "Week 2 update document sent to AIM — `docs/updates/AIM_Prestige_Motors_Week_2_Update.docx` (2026-09-21): live site, email, redesigned showroom, admin, freight model, client items, next week"
+        },
+        {
+          "done": false,
+          "text": "Week 2 review confirmed by AIM in writing"
+        }
+      ],
+      "done": 19,
+      "total": 22
+    },
+    {
+      "label": "Week 3",
+      "title": "Public website and SEO",
+      "status": "in-progress",
+      "description": "AIM browses live inventory; vehicle details confirmed present in page source.",
+      "items": [
+        {
+          "done": true,
+          "text": "Design token system — colour, typography, spacing, radii, motion"
+        },
+        {
+          "done": true,
+          "text": "Published design system reference page"
+        },
+        {
+          "done": true,
+          "text": "Component library — navigation, vehicle cards, galleries, buttons, footer"
+        },
+        {
+          "done": true,
+          "text": "Responsive across mobile, tablet and desktop"
+        },
+        {
+          "done": true,
+          "text": "Homepage — video hero, Make and Model quick search, Featured, New Arrivals"
+        },
+        {
+          "done": true,
+          "text": "Homepage — Customer Reviews, Previously Sold carousel, How It Works, footer"
+        },
+        {
+          "done": true,
+          "text": "Front-end pass (2026-09-21): New Arrivals as a photography-first mosaic, reviews auto-advancing on phones, inventory filters folded on phones, solid high-contrast hero search bar, WhatsApp prompt bubble, footer with closing call to action, About page with three pillars and showroom image"
+        },
+        {
+          "done": true,
+          "text": "Floating WhatsApp contact site-wide"
+        },
+        {
+          "done": true,
+          "text": "Homepage sections reading from Supabase instead of `data/vehicles.ts` — `lib/vehicles/queries.ts`, revalidated on every admin save"
+        },
+        {
+          "done": true,
+          "text": "Inventory page with server-side filtering on all agreed attributes — one SQL query, `/inventory`"
+        },
+        {
+          "done": true,
+          "text": "Filters driven by shareable URL parameters — `lib/vehicles/filters.ts`, plain GET form, no JavaScript needed"
+        },
+        {
+          "done": true,
+          "text": "Vehicle detail pages with full gallery and fullscreen viewer — `components/gallery.tsx`, native `<dialog>`"
+        },
+        {
+          "done": true,
+          "text": "Complete specifications drawn from the database"
+        },
+        {
+          "done": true,
+          "text": "Two separated customer journeys — inspect/test drive vs buy remotely"
+        },
+        {
+          "done": true,
+          "text": "Every vehicle on a permanent clean URL — `/vehicles/<slug>`, slug locked by migration 0013"
+        },
+        {
+          "done": true,
+          "text": "Unique title and meta description per vehicle — generated, overridable from the admin Pricing tab"
+        },
+        {
+          "done": true,
+          "text": "Server-rendered vehicle details in initial HTML before JavaScript runs"
+        },
+        {
+          "done": true,
+          "text": "schema.org Vehicle, Product and Offer data from the same query as the display — plus BreadcrumbList"
+        },
+        {
+          "done": true,
+          "text": "Canonical URLs, automated XML sitemap, robots.txt, breadcrumb data"
+        },
+        {
+          "done": true,
+          "text": "Open Graph and social sharing metadata, correct status codes and redirects — draft and unknown slugs 404"
+        },
+        {
+          "done": true,
+          "text": "robots.txt permitting AI crawlers, plus llms.txt at site root"
+        },
+        {
+          "done": true,
+          "text": "Correct indexation rules — Sold indexed, Archived noindex/follow, Draft invisible to anon"
+        },
+        {
+          "done": true,
+          "text": "Sold pages permanently live with SOLD treatment"
+        },
+        {
+          "done": true,
+          "text": "Similar Vehicles and Find Me Another panels on sold pages"
+        },
+        {
+          "done": true,
+          "text": "Sold price display configurable on or off from the admin panel — `show_sold_price` setting (admin settings screen is Week 6; toggle by SQL until then)"
+        },
+        {
+          "done": true,
+          "text": "Responsive image sizing, modern formats, compression, lazy loading — `next/image` over Storage URLs; CDN transforms once on Pro"
+        },
+        {
+          "done": true,
+          "text": "About page with embedded map — draft copy, awaiting AIM's text"
+        },
+        {
+          "done": true,
+          "text": "Finance information page — states no in-house or partnered finance; marked for legal review"
+        },
+        {
+          "done": true,
+          "text": "Interim Sell Your Car, Book Consultation and Reserve pages routing to WhatsApp until the Week 5/6 flows replace them (Sell and Book Consultation now carry their real forms; Reserve still interim)"
+        },
+        {
+          "done": true,
+          "text": "AIM's three real vehicles loaded into the live project with photography — `scripts/seed-real-stock.mjs`"
+        },
+        {
+          "done": true,
+          "text": "Deployed and verified on production 2026-09-13 — `npm run test:e2e` 45/45 including the showroom checks; `curl` of a vehicle page shows price, odometer and specs (criterion 4)"
+        },
+        {
+          "done": false,
+          "text": "Phone check at 390px on a physical device"
+        },
+        {
+          "done": false,
+          "text": "Week 3 review confirmed by AIM in writing"
+        }
+      ],
+      "done": 31,
+      "total": 33
+    },
+    {
+      "label": "Week 4",
+      "title": "Freight and delivery",
+      "status": "in-progress",
+      "description": "AIM enters carrier rates and a customer receives a delivery price by postcode.",
+      "items": [
+        {
+          "done": true,
+          "text": "Base transport rates by route and postcode — `/admin/freight/rates`, zone to zone with optional vehicle size; one live rate per route + size"
+        },
+        {
+          "done": true,
+          "text": "Postcode zone and regional grouping configuration — `/admin/freight/zones` and `/admin/freight/postcodes`; every Australian postcode band seeded to a zone (migration 0016)"
+        },
+        {
+          "done": true,
+          "text": "Regional and remote surcharges — `/admin/freight/surcharges`, per zone or postcode, dollar and/or percent"
+        },
+        {
+          "done": true,
+          "text": "Vehicle size categories where different rates apply — size on each rate, size on each vehicle (Specs tab), size-less rate as the fallback"
+        },
+        {
+          "done": true,
+          "text": "Markup configurable as percentage or fixed dollar amount — freight settings, plus rounding rule and quote-only message"
+        },
+        {
+          "done": true,
+          "text": "Individual route overrides, special rates, temporary manual overrides — `/admin/freight/overrides`, postcode / zone / vehicle, dated validity, quote-only option"
+        },
+        {
+          "done": true,
+          "text": "Contact-us-for-quote designation for unpriced locations — quote-only zones, postcodes and overrides; any route with no rate falls back to the configured message"
+        },
+        {
+          "done": true,
+          "text": "CSV and Excel bulk upload with validation preview — `/admin/freight/uploads`: parse, validate every row, preview accepted and rejected, apply in one transaction, revert"
+        },
+        {
+          "done": true,
+          "text": "Carrier cost and customer price stored separately — `delivery_quotes` keeps both; margin in `v_delivery_margin`"
+        },
+        {
+          "done": true,
+          "text": "Delivery calculator on every vehicle page — postcode in, price or quote-only out; carrier cost never leaves the database"
+        },
+        {
+          "done": true,
+          "text": "Coverage across all Australian states and territories — 8 states and territories, metro / regional / remote zones, 6,000+ postcodes"
+        },
+        {
+          "done": true,
+          "text": "Owner's pricing model (2026-09-21 voice note): markup can be negative; postcode-range offers (\"4000–4999 = $0\", \"2000–2100 = −50%\"); per-vehicle delivery mode (standard / full freight price / fixed / free / quote only) on the Pricing tab — migration 0018, 16 new database checks"
+        },
+        {
+          "done": true,
+          "text": "Estimated default rates for every zone so the calculator prices nationwide now; marked ESTIMATE in Freight → Rates; `docs/freight/` has the model and the per-postcode sheet"
+        },
+        {
+          "done": false,
+          "text": "AIM's carrier rate sheet loaded — **hard blocker**, requested 2026-09-21; replaces the estimates zone by zone via Freight → Uploads"
+        },
+        {
+          "done": true,
+          "text": "Deployed and verified on production 2026-09-13 — 131/131 database checks live (26 freight), `npm run test:e2e` 67/67, Week 3 regression 72/72"
+        },
+        {
+          "done": false,
+          "text": "Week 4 review confirmed by AIM in writing"
+        }
+      ],
+      "done": 14,
+      "total": 16
+    },
+    {
+      "label": "Week 5",
+      "title": "Reservation and payments",
+      "status": "not-started",
+      "description": "A full reservation completed in Stripe test mode, including a refund.",
+      "items": [
+        {
+          "done": false,
+          "text": "Stripe Checkout in AUD — cards, Apple Pay, Google Pay"
+        },
+        {
+          "done": false,
+          "text": "Reservation amount configurable from the backend"
+        },
+        {
+          "done": false,
+          "text": "Signature-verified webhooks as the source of truth"
+        },
+        {
+          "done": false,
+          "text": "Idempotent handling of retried webhook events"
+        },
+        {
+          "done": false,
+          "text": "Database-level locking preventing double reservation"
+        },
+        {
+          "done": false,
+          "text": "Automatic status change to Reserved on successful payment"
+        },
+        {
+          "done": false,
+          "text": "Pending reservations expire and release the vehicle"
+        },
+        {
+          "done": false,
+          "text": "Automatic calculation of remaining balance"
+        },
+        {
+          "done": false,
+          "text": "Confirmation email to buyer, notification to AIM"
+        },
+        {
+          "done": false,
+          "text": "Reservation Confirmation and Purchase Pack from editable templates"
+        },
+        {
+          "done": false,
+          "text": "Staff-generated secure payment links for balance payments"
+        },
+        {
+          "done": false,
+          "text": "Configurable payment surcharge, defaulting to disabled"
+        },
+        {
+          "done": false,
+          "text": "Manual bank transfer recording with reference and proof attachment"
+        },
+        {
+          "done": false,
+          "text": "Refund and vehicle release from the admin panel, fully logged"
+        },
+        {
+          "done": false,
+          "text": "Final AIM tax invoice with unique controlled invoice number"
+        }
+      ],
+      "done": 0,
+      "total": 15
+    },
+    {
+      "label": "Week 6",
+      "title": "Leads, security and launch prep",
+      "status": "not-started",
+      "description": "All forms deliver, conversion events fire, site ready for launch.",
+      "items": [
+        {
+          "done": true,
+          "text": "Book Consultation form with enquiry type routing — written enquiry saved → customer → lead → emailed to sales@ (2026-09-19); WhatsApp path alongside"
+        },
+        {
+          "done": false,
+          "text": "Pre-Order / Find Me a Car with structured fields"
+        },
+        {
+          "done": true,
+          "text": "Sell Your Car and Trade-In submission with multiple photographs — `/sell`: three-step explainer and a two-column form; saves customer → lead → `trade_ins` → enquiry, emails sales@, then up to 10 photos upload straight to the private bucket against the new trade-in (2026-09-21)"
+        },
+        {
+          "done": false,
+          "text": "Customer finance enquiry pathway from the vehicle page"
+        },
+        {
+          "done": false,
+          "text": "Every enquiry automatically linked to vehicle, customer and lead"
+        },
+        {
+          "done": false,
+          "text": "Enquiry inbox and lead list with source, status, assignment, notes"
+        },
+        {
+          "done": false,
+          "text": "Customer account showing reservation status, receipt, outstanding balance"
+        },
+        {
+          "done": false,
+          "text": "CSV and Excel export of inventory, leads, customers, transactions"
+        },
+        {
+          "done": false,
+          "text": "Rate limiting on checkout and forms"
+        },
+        {
+          "done": false,
+          "text": "Bot protection, security headers, session management"
+        },
+        {
+          "done": false,
+          "text": "Private document storage verified unreachable by public URL"
+        },
+        {
+          "done": false,
+          "text": "Google Analytics 4 and Meta Pixel connected to AIM's accounts"
+        },
+        {
+          "done": false,
+          "text": "All nine conversion events firing"
+        },
+        {
+          "done": false,
+          "text": "Accessibility — semantic markup, keyboard nav, focus states, reduced motion, alt text"
+        },
+        {
+          "done": false,
+          "text": "Mobile performance verified at realistic inventory volume"
+        },
+        {
+          "done": false,
+          "text": "Full workflow testing"
+        }
+      ],
+      "done": 2,
+      "total": 16
+    },
+    {
+      "label": "Week 7-8",
+      "title": "Contingency and handover",
+      "status": "not-started",
+      "description": "Contingency weeks. If Weeks 1 to 6 run on schedule, handover happens in Week 6 or 7.",
+      "items": [
+        {
+          "done": false,
+          "text": "Live Stripe keys in production"
+        },
+        {
+          "done": false,
+          "text": "Production domain testing"
+        },
+        {
+          "done": false,
+          "text": "Google Search Console configured and verified"
+        },
+        {
+          "done": false,
+          "text": "Live crawl and render test on a production vehicle page"
+        },
+        {
+          "done": false,
+          "text": "Sitemap submitted to Bing Webmaster Tools"
+        },
+        {
+          "done": false,
+          "text": "Backup restoration executed and documented"
+        },
+        {
+          "done": false,
+          "text": "Complete source code repository with full version history"
+        },
+        {
+          "done": false,
+          "text": "Database schema and migrations handed over"
+        },
+        {
+          "done": false,
+          "text": "Owner-level access to hosting, database, storage and all accounts"
+        },
+        {
+          "done": false,
+          "text": "Environment, deployment, backup, restore and export documentation"
+        },
+        {
+          "done": false,
+          "text": "Written administration guide"
+        },
+        {
+          "done": false,
+          "text": "Recorded walkthrough of routine tasks"
+        },
+        {
+          "done": false,
+          "text": "One live training session with AIM staff"
+        },
+        {
+          "done": false,
+          "text": "Signed written inventory of every account"
+        },
+        {
+          "done": false,
+          "text": "Developer privileged access removed"
+        },
+        {
+          "done": false,
+          "text": "Acceptance testing per Section 5, then handover"
+        }
+      ],
+      "done": 0,
+      "total": 16
+    }
+  ],
+  "criteria": [
+    {
+      "done": false,
+      "n": 1,
+      "text": "Staff adds and publishes a vehicle unassisted"
+    },
+    {
+      "done": true,
+      "n": 2,
+      "text": "It appears on inventory and homepage when flagged Featured or New Arrival"
+    },
+    {
+      "done": true,
+      "n": 3,
+      "text": "Detail page renders full gallery and specs from the database"
+    },
+    {
+      "done": true,
+      "n": 4,
+      "text": "Page source shows name, year, price, odometer, specs, availability"
+    },
+    {
+      "done": false,
+      "n": 5,
+      "text": "Search Console crawls and renders a production vehicle page"
+    },
+    {
+      "done": false,
+      "n": 6,
+      "text": "Every filter correct; homepage search carries into inventory"
+    },
+    {
+      "done": false,
+      "n": 7,
+      "text": "Full lifecycle, and archived appears in Previously Sold"
+    },
+    {
+      "done": true,
+      "n": 8,
+      "text": "Postcode returns a delivery price; CSV upload changes it — proven by the acceptance suite on the live project with test rates; awaiting AIM's real rate sheet"
+    },
+    {
+      "done": false,
+      "n": 9,
+      "text": "Reservation with a real card locks the vehicle and emails both sides"
+    },
+    {
+      "done": true,
+      "n": 10,
+      "text": "Second customer prevented from reserving the same vehicle"
+    },
+    {
+      "done": false,
+      "n": 11,
+      "text": "Refund from admin returns vehicle to Active"
+    },
+    {
+      "done": false,
+      "n": 12,
+      "text": "Manual bank transfer recorded, balance updates"
+    },
+    {
+      "done": false,
+      "n": 13,
+      "text": "Consultation, Pre-Order, Sell Your Car, Trade-In all arrive"
+    },
+    {
+      "done": false,
+      "n": 14,
+      "text": "WhatsApp and test drive links work on a physical phone"
+    },
+    {
+      "done": true,
+      "n": 15,
+      "text": "Staff cannot access cost or profit; Owner and Accounts can"
+    },
+    {
+      "done": false,
+      "n": 16,
+      "text": "Inventory, leads, deals, transactions export to CSV"
+    },
+    {
+      "done": false,
+      "n": 17,
+      "text": "A backup is restored successfully"
+    },
+    {
+      "done": false,
+      "n": 18,
+      "text": "All widths render correctly, no console errors"
+    },
+    {
+      "done": false,
+      "n": 19,
+      "text": "Completed sale generates a tax invoice with a unique number"
+    },
+    {
+      "done": false,
+      "n": 20,
+      "text": "Finance or trade-in enquiry links to vehicle and customer"
+    },
+    {
+      "done": false,
+      "n": 21,
+      "text": "Trade-in converts to inventory with details and photos"
+    },
+    {
+      "done": false,
+      "n": 22,
+      "text": "AIM holds owner-level access to every account"
+    }
+  ],
+  "blockers": [
+    {
+      "item": "Freight rate sheet, markup policy, quote-only list",
+      "due": "Week 4",
+      "received": "markup policy received by voice note 2026-09-21; rate sheet outstanding"
+    },
+    {
+      "item": "Stripe account verified in AIM's legal name",
+      "due": "Week 5",
+      "received": null
+    }
+  ]
+}
